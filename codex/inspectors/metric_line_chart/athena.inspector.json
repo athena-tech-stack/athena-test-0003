@@ -1,0 +1,11 @@
+{
+  "name": "metric_line_chart",
+  "version": "0.1.0",
+  "displayName": "Metric Line Chart",
+  "description": "Visualizes denoising metrics as line charts with multi-run support",
+  "entry": "dist/bundle.js",
+  "inputs": {
+    "run_id": { "type": "string", "required": true },
+    "metric_names": { "type": "array", "items": "string" }
+  }
+}

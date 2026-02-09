@@ -1,0 +1,38 @@
+# Athena configuration for DDPM Cat Image Generation Pipeline
+
+discovery:
+  scan_paths:
+    - codex/blocks/
+    - codex/pipelines/
+  configs_path: codex/configs/
+
+# Gate: Pause after GeneratePreview to review samples before full generation
+gates:
+  - name: review_preview_samples
+    description: Pause to review 2 preview samples before generating 10 full samples
+    when:
+      type: after_step
+      node_id: generate_preview_0
+      status: succeeded
+    action: pause
+
+# Inspectors to attach to every run
+inspectors:
+  - package_name: metric_line_chart
+    display_name: Denoising Trajectory
+    inputs:
+      metric_names:
+        - denoise/noise_level
+        - denoise/predicted_noise_mse
+        - denoise/snr
+
+  - package_name: scalar_summary
+    display_name: Quality Dashboard
+    inputs:
+      metric_names:
+        - quality/samples_generated
+
+  - package_name: slideshow
+    display_name: Generated Samples
+    inputs:
+      schema_type: generated_sample

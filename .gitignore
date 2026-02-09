@@ -1,0 +1,5 @@
+
+# Athena local directories
+.athena/
+.claude/
+.env

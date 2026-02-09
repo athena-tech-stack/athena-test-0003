@@ -1,0 +1,11 @@
+{
+  "name": "scalar_summary",
+  "version": "0.1.0",
+  "displayName": "Scalar Summary",
+  "description": "Live dashboard of quality/* metrics with sparklines and multi-run support",
+  "entry": "dist/bundle.js",
+  "inputs": {
+    "run_id": { "type": "string", "required": true },
+    "metric_names": { "type": "array", "items": "string" }
+  }
+}
