@@ -1,5 +1,8 @@
 # Athena configuration for DDPM Cat Image Generation Pipeline
 
+runtime:
+  default_interpreter: "uv run python"
+
 discovery:
   scan_paths:
     - codex/blocks/
