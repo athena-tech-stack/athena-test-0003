@@ -33,7 +33,9 @@ inspectors:
     display_name: Quality Dashboard
     inputs:
       metric_names:
-        - quality/samples_generated
+        - denoise/noise_level
+        - denoise/predicted_noise_mse
+        - denoise/snr
 
   - package_name: slideshow
     display_name: Generated Samples

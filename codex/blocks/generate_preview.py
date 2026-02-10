@@ -29,7 +29,7 @@ async def generate_preview(ctx: BlockContext) -> dict:
 
     model_path = ctx.inputs["model_path"]
     num_samples = 2
-    num_inference_steps = 50
+    num_inference_steps = 10
 
     await ctx.emit_progress(0, num_samples, "Loading model...")
 
